@@ -27,7 +27,7 @@ export default function ReservationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800" id='reservations'>
       {/* Back Button */}
       <div className="container mx-auto px-4 py-6">
         <Link 

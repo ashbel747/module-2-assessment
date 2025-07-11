@@ -12,7 +12,7 @@ const ChatBot = () => {
       </button>
 
       {chatbotOpen && (
-      <div className="fixed inset-0 z-50 bg-[url('assets/chatbot-section-background.jpeg')] bg-cover bg-top bg-no-repeat flex flex-col overflow-y-auto">
+      <div className="fixed inset-0 z-50 bg-[url('assets/chatbot-section-background.jpeg')] bg-cover bg-top bg-no-repeat flex flex-col overflow-y-auto" id="chatbot">
         <div className="px-4 py-3 flex justify-between items-center">
           <button className="bg-green-500 text-black px-4 py-2" onClick={() => setChatbotOpen(false)}>
             Back
