@@ -108,7 +108,7 @@ export default function Hero() {
         </h2>
         <Link
           to="/reservation"
-          className="inline-block bg-amber-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+          className="inline-block bg-orange-100 text-black dark:bg-gray-800 dark:text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg"
         >
           RESERVE A SEAT
         </Link>
