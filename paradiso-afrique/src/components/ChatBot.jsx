@@ -44,6 +44,9 @@ const ChatBot = () => {
                 </div>
               </div>
 
+              {/*Typing Animation*/}
+              <div><span className="animated-dots text-4xl font-bold text-black"></span></div>
+
             </div>
             
 
