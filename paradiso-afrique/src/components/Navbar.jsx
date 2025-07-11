@@ -77,10 +77,10 @@ export default function Navbar() {
                       <Link to="/menu/starters">Starters</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-                      <Link to="/menu/mains">Main Course</Link>
+                      <Link to="/menu/main dishes">Main Dishes</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-                      <Link to="/menu/desserts">Desserts</Link>
+                      <Link to="/menu/drinks">Drinks</Link>
                     </li>
                   </ul>
                 )}

@@ -8,7 +8,7 @@ export default function MenuPage() {
   const filteredDishes = dishes.filter((dish) => dish.type === type);
 
   return (
-    <div className="p-10 bg-white dark:bg-gray-900 min-h-screen">
+    <div className="p-10  bg-orange-100 dark:bg-gray-800 min-h-screen">
       <h1 className="text-3xl font-bold text-center mb-6 capitalize text-gray-900 dark:text-white">
         {type} Menu
       </h1>
@@ -20,7 +20,7 @@ export default function MenuPage() {
           {filteredDishes.map((dish) => (
             <div
               key={dish.id}
-              className="border rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700"
+              className="bg-orange-300 dark:bg-gray-900 dark:text-white overflow-hidden"
             >
               <img
                 src={dish.image}
