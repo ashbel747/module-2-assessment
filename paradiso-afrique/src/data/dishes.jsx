@@ -78,7 +78,7 @@ const dishes = [
     type: "main",
     price: "KSH 700",
     description: "Slow-cooked banana curry, slimmered in a savory tomato and onion sauce",
-    image: "../src/assets/dish-9.jpeg",
+    image: "../src/assets/dish-9.jpg",
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ const dishes = [
     type: "main",
     price: "KSH 600",
     description: "Slow cooked red kidney beans seasoned with onions, garlic and tomatoes",
-    image: "../src/assets/dish-10.jpeg",
+    image: "../src/assets/dish-10.jpg",
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ const dishes = [
     type: "main",
     price: "KSH 700",
     description: "Fluffy rice simmered in rich coconut milk",
-    image: "../src/assets/dish-11.jpeg",
+    image: "../src/assets/dish-11.jpg",
   },
   {
     id: 12,
@@ -146,8 +146,8 @@ const dishes = [
   {
     id: 17,
     name: "Sake Sangria",
-    category: "Non-vegan",
-    type: "Specials",
+    category: "Specials",
+    type: "Drinks",
     price: "KSH 900",
     description: "Sangria",
     image: "../src/assets/sangria.jpg",
@@ -155,8 +155,8 @@ const dishes = [
   {
     id: 18,
     name: "Pink Lemonade",
-    category: "Non-vegan",
-    type: "Specials",
+    category: "Specials",
+    type: "Drinks",
     price: "KSH 700",
     description: "Lemonade",
     image: "../src/assets/pink-lemonade.jpg",

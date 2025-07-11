@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+  30% {
+    content: "..";
+  }
+  60% {
+    content: "...";
+  }
+  100%{
+    content: ".";
+  }
+}
+
+.animated-dots::after{
+  content: "";
+  animation: dots 1s ease-in infinite;
+}
+
