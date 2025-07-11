@@ -37,7 +37,7 @@ export default function FeedbackForm() {
         {/* Form Card */}
         <form
           onSubmit={handleSubmit}
-          className="bg-orange-100 rounded-lg shadow-lg px-8 py-6"
+          className="bg-orange-100 text-black dark:bg-gray-800 dark:text-white rounded-lg shadow-lg px-8 py-6"
         >
           <div className="mb-4">
             <label className="block mb-1 font-semibold">Full Name:</label>
@@ -82,12 +82,14 @@ export default function FeedbackForm() {
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring"
             />
           </div>
-          <button
+          <div className="text-center">
+            <button
             type="submit"
-            className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800 transition font-semibold"
-          >
-            SUBMIT
-          </button>
+            className="w-40 bg-green-700 text-black py-2 rounded hover:bg-green-800 font-semibold"
+            >
+              SUBMIT
+            </button>
+          </div>
         </form>
       </div>
     </div>

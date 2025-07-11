@@ -17,8 +17,10 @@ function App() {
         <SignatureDishes />
         <FeedbackForm  />
         <ChatBot  />
-        <Footer  />
       </main>
+      <footer>
+        <Footer  />
+      </footer>
       
     </div>
   );
