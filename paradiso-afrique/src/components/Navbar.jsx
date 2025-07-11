@@ -86,8 +86,12 @@ export default function Navbar() {
                 )}
               </li>
 
+              <button onClick={() => scrollToSection('story')} className="cursor-pointer">
+                Our Story
+              </button>
+              
               <button onClick={() => scrollToSection('dishes')} className="cursor-pointer">
-                Siganture Dishes
+                Signature Dishes
               </button>
             </ul>
 

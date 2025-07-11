@@ -5,7 +5,7 @@ export default function OurStory() {
   return (
     <section
       className="bg-orange-100 dark:bg-gray-800 py-0 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] transition-colors duration-300"
-      id="our-story"
+      id="story"
     >
       <div className="flex justify-center">
         <h2 className="bg-amber-600 dark:bg-gray-900 dark:text-white inline-block px-5 rounded-lg text-5xl font-italianno text-center mb-8">

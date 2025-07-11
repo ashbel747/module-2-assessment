@@ -16,16 +16,24 @@ export default function Footer() {
     checkIfOpen();
   }, []);
 
+  //Smooth scroll
+  const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+  };
+
   return (
     <footer
       id="footer"
       className="bg-orange-100 dark:bg-gray-800 dark:text-white text-black p-8 mt-12"
     >
       <nav class="hidden md:flex space-x-6 mb-4">
-        <a href="#" className="hover:font-bold ">Home</a>
-        <a href="dishes" className="hover:font-bold ">Dishes</a>
-        <a href="story" className="hover:font-bold ">Our Story</a>
-        <a href="feedback" className="hover:font-bold ">Feedback</a>
+        <button onClick={() => scrollToSection('hero')} className="hover:font-bold ">Home</button>
+        <button onClick={() => scrollToSection('dishes')} className="hover:font-bold ">Dishes</button>
+        <button onClick={() => scrollToSection('story')} className="hover:font-bold ">Our Story</button>
+        <button onClick={() => scrollToSection('feedback')} className="hover:font-bold ">Feedback</button>
       </nav>
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-6">
         
