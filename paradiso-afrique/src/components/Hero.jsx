@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom';
 import{FaArrowCircleLeft} from "react-icons/fa"
 import{FaArrowCircleRight} from "react-icons/fa"
 import HeroImage1 from "../assets/hero-carousel-1.jpeg";
@@ -105,11 +106,12 @@ export default function Hero() {
         <h2 className="font-italianno text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white">
           {displayedCharacter}
         </h2>
-        <button className="px-5 py-6 bg-orange-100 text-black font-bold rounded cursor-pointer" onClick={() =>{
-          alert("We'll reach you once we launch!");
-        }}>
+        <Link
+          to="/reservation"
+          className="inline-block bg-amber-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+        >
           RESERVE A SEAT
-        </button>
+        </Link>
       </div>
     </section>  
   );
