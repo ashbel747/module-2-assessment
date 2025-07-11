@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-orange-100 text-black p-8 mt-12"
+      className="bg-orange-100 dark:bg-gray-800 dark:text-white text-black p-8 mt-12"
     >
       <nav class="hidden md:flex space-x-6 mb-4">
         <a href="#" className="hover:font-bold ">Home</a>
@@ -66,7 +66,7 @@ export default function Footer() {
           <p>We are located at Lavington, Nairobi</p>
           <h3 className="text-xl font-semibold mb-2">Opening Hours</h3>
           <p>Everyday: 8:00 AM - 10:00 PM</p>
-          <p className="font-bold text-black">
+          <p className="font-bold">
             {isOpen ? "We've Opened!" : "We've Closed!"}
           </p>
         </div>

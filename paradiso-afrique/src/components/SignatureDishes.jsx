@@ -20,7 +20,7 @@ export default function SignatureDishes() {
   return (
     <section className="p-10 bg-orange-100 dark:bg-gray-800" id="dishes">
       <div class="flex justify-center">
-        <h2 class="bg-amber-600 inline-block px-5 rounded-lg text-5xl font-italianno text-center mb-8">
+        <h2 class="bg-amber-600 dark:bg-gray-900 inline-block px-5 rounded-lg text-5xl font-italianno text-center mb-8">
           Our Signature Dishes
         </h2>
       </div>
@@ -34,10 +34,10 @@ export default function SignatureDishes() {
               setCategory(cat);
               setVisibleCount(3);
             }}
-            className={`px-4 py-2 border transition ${
+            className={`px-4 py-2 hover:scale-105 transition ${
               category === cat
-                ? "bg-green-500 text-black"
-                : "bg-green-500 text-black"
+                ? "bg-green-500 dark:bg-green-800 text-white"
+                : "bg-green-500 dark:bg-green-800 text-white"
             }`}
           >
             {cat}
@@ -77,7 +77,7 @@ export default function SignatureDishes() {
         <div className="text-center mt-8">
           <button
             onClick={() => setVisibleCount((prev) => prev + 8)}
-            className="px-6 py-2 bg-green-500 text-black"
+            className="px-6 py-2 bg-green-500 dark:bg-green-800 hover:scale-105 text-black"
           >
             Uncover More...
           </button>

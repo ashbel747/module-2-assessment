@@ -14,9 +14,9 @@ function App() {
       <main>
         <Hero  />
         <OurStory  />
+        <ChatBot  />
         <SignatureDishes />
         <FeedbackForm  />
-        <ChatBot  />
       </main>
       <footer>
         <Footer  />
