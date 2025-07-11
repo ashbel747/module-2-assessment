@@ -30,21 +30,15 @@ export default function FeedbackForm() {
       <div className="w-full max-w-lg">
          {/* Title */}
         <div className="flex flex-col items-center mb-2">
-          <h1 className="text-3xl font-serif font-bold bg-green-700 text-white px-8 py-2 rounded-b-lg rounded-t-lg mb-2 shadow-md" style={{ fontFamily: "cursive, serif" }}>
+          <h1 className="text-5xl font-italianno bg-amber-600 text-black dark:bg-gray-900 dark:text-white px-8 py-2">
             Feedback Form
           </h1>
         </div>
         {/* Form Card */}
         <form
           onSubmit={handleSubmit}
-          className="bg-yellow-100 rounded-lg shadow-lg px-8 py-6"
+          className="bg-orange-100 rounded-lg shadow-lg px-8 py-6"
         >
-          {/* Info Box */}
-          <div className="mb-4 flex justify-center">
-            <div className="bg-yellow-400 text-gray-900 text-sm px-4 py-2 rounded shadow font-medium">
-              Tell us about Your Experience at Paradiso Afrique
-            </div>
-          </div>
           <div className="mb-4">
             <label className="block mb-1 font-semibold">Full Name:</label>
             <input

@@ -1,51 +1,33 @@
 import React from 'react';
+import AboutUsImage from '../assets/about-us-image.jpeg'
 
 export default function OurStory() {
   return (
     <section
-      className="bg-[#f6ecd9] dark:bg-gray-900 py-0 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] transition-colors duration-300"
+      className="bg-orange-100 dark:bg-gray-800 py-0 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] transition-colors duration-300"
       id="our-story"
     >
-      <div className="flex flex-col md:flex-row w-full h-full min-h-[350px]">
-        {/* Image */}
-        <div className="w-full md:w-1/2">
-          <img
-            src="/about-us-image.jpeg"
-            alt="Paradiso Afrique Interior"
-            className="w-full h-full object-cover object-center rounded-none"
-            style={{ minHeight: 250, maxHeight: 450 }}
-          />
-        </div>
-        {/* Text */}
-        <div className="w-full md:w-1/2 flex flex-col justify-start px-6 py-8 md:py-0">
-          <div className="bg-yellow-800 dark:bg-yellow-900 px-6 py-2 rounded w-max mb-6 mx-auto md:mx-0">
-            <h2 className="text-2xl md:text-3xl font-semibold italic text-white font-serif tracking-wide text-center md:text-left">
-              Paradiso Afrique Story
-            </h2>
-          </div>
-          <div className="text-gray-800 dark:text-gray-200 text-base md:text-lg">
-            <p className="mb-4">
-              At Paradiso Afrique, we bring Africa to your plate—one soulful dish at a time. Inspired by the warmth of home and the rhythm of our roots, our space is a celebration of culture, flavor, and connection.
-            </p>
-            <p className="mb-4">
-              From Nigerian jollof to Kenyan chapati, every recipe tells a story and every visit feels like a journey through the heart of the continent.
-            </p>
-            <p>
-              Pull up a chair. You’re home.
-            </p>
-            {/* Chat Button */}
-            <div className="mt-6 flex justify-end">
-              <a
-                href="#chat"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-400 dark:border-gray-600 rounded hover:bg-yellow-100 dark:hover:bg-gray-800 transition"
-              >
-                <span>💬</span>
-                <span className="text-sm">Chat with our bot</span>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div className="flex justify-center">
+        <h2 className="bg-amber-600 dark:bg-gray-900 dark:text-white inline-block px-5 rounded-lg text-5xl font-italianno text-center mb-8">
+          Paradiso Afrique Story
+        </h2>
       </div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
+        {/*Image*/}
+        <div>
+          <img src={AboutUsImage} className="w-full h-50 object-cover rounded-none border-none shadow-none" />
+        </div>
+        {/*Text*/}
+        <div className="px-4 py-5 mt-20">
+          <p className="mb-8 text-base leading-relaxed">
+            At Paradiso Afrique, we bring Africa to your plate one soulful dish at a time. Inspired by the warmth of home and the rhythm of our roots, our space is a celebration of culture, flavor, and connection.
+          </p>
+          <p className="mb-4 text-base leading-relaxed">
+            From Nigerian jollof to Kenyan chapati, every recipe tells a story and every visit feels like a journey through the heart of the continent.
+          </p>
+          <p className="font-semibold text-base">Pull up a chair. You're home.</p>
+        </div>  
+      </div>    
     </section>
   );
 }

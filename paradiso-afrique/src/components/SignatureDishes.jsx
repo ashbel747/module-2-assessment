@@ -64,7 +64,7 @@ export default function SignatureDishes() {
             </div>
 
           
-            <div className="bg-opacity-70 text-black p-4 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center">
+            <div className="bg-opacity-70 text-black dark:text-white p-4 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center">
               <span className="mt-2 font-bold">{dish.price}</span>
               <p>{dish.description}</p>
             </div>
