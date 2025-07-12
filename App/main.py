@@ -8,7 +8,7 @@ print("main is running")
 # Enable CORS for all origins (frontend integration later)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://practicedeplo.netlify.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
