@@ -30,3 +30,8 @@ JavaScript
 
    git clone https://github.com/ashbel747/module-2-assessment.git
    cd paradiso-afrique
+
+## 💻 Livesite
+https://practicedeplo.netlify.app/
+
+
