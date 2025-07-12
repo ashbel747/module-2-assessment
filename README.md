@@ -7,13 +7,26 @@ A modern, responsive restaurant website built with React and Tailwind CSS and is
 
 Paradiso Afrique is a beautifully designed web application for a luxury restaurant, showcasing its menu, ambiance, and signature dishes and also has an integrated chatbot.
 
+## 🚀 Project Teammates
+
+LilyJoy - UI/UX designer
+Ashbel King'ori - Full stack dev
+Mahder Hawaz - Full stack dev
+Ermias Molla - Gen ai
+Meryln Omagwa - Gen ai
+
+## 💻 Technologies used
+
+React Js
+Tailwindcss
+JavaScript
 
 ## 📸 Screenshots
 
-----To be added soon
+../assets/screenshot-1.png
+../assets/screenshot-2.png
 
 ## 🛠️ Setup Instructions
 
-1. **Clone the repository:**
    git clone https://github.com/ashbel747/module-2-assessment.git
    cd paradiso-afrique
