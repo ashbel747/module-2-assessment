@@ -1,44 +1,21 @@
 from langchain_community.llms import HuggingFacePipeline
-
-try:
-    import torch
-    from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
-except ImportError:
-    torch = None
-    pipeline = None
-    AutoTokenizer = None
-    AutoModelForCausalLM = None
-
+from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 from App.config.settings import settings
-
-print("llama running")
+import torch
 
 def load_llama_chain():
-    if torch is None:
-        print("Warning: PyTorch or Transformers not installed. LLM cannot be loaded.")
-        # Return dummy llm function
-        def dummy_llm(*args, **kwargs):
-            return "Error: Required packages (torch, transformers) not installed."
-        return dummy_llm
+    model_name = settings.LLAMA2_MODEL_NAME
 
     try:
-        model = AutoModelForCausalLM.from_pretrained(
-            settings.LLAMA2_MODEL_NAME,
-            token=settings.LLAMA2_HF_TOKEN,
-            device_map="auto",
-            torch_dtype=torch.float16
-        )
-
-        tokenizer = AutoTokenizer.from_pretrained(
-            settings.LLAMA2_MODEL_NAME,
-            token=settings.LLAMA2_HF_TOKEN
-        )
+        # Load the flan-t5-base model (Seq2Seq)
+        model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
 
         text_gen_pipeline = pipeline(
-            "text-generation",
+            "text2text-generation",  # flan-t5 is a Seq2Seq model
             model=model,
             tokenizer=tokenizer,
-            max_new_tokens=512,
+            max_new_tokens=128,
             temperature=0.7,
             repetition_penalty=1.1
         )
@@ -46,10 +23,7 @@ def load_llama_chain():
         return HuggingFacePipeline(pipeline=text_gen_pipeline)
 
     except Exception as e:
-        err_msg = str(e)   # capture error string
-        print(f"Failed to load LLM model: {err_msg}")
-
+        print(f"Failed to load model: {e}")
         def fallback_llm(*args, **kwargs):
-            return f"Error loading model: {err_msg}"   # use captured string here
-
+            return f"Error loading model: {e}"
         return fallback_llm
