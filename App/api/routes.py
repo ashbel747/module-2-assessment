@@ -27,7 +27,7 @@ def root():
 
 
 
-@router.post("/chat")
+@router.post("/")
 def chat_with_bot(request: ChatRequest):
     try:
         message = request.message
