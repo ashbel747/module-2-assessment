@@ -1,6 +1,12 @@
 from langchain.memory import ConversationBufferMemory
+from langchain_community.chat_message_histories import ChatMessageHistory
 
-# This stores conversation history for a single user/session
-memory = ConversationBufferMemory(memory_key="chat_history")
+print("running on manager")
 
+chat_history = ChatMessageHistory()
 
+memory = ConversationBufferMemory(
+    chat_memory=chat_history,
+    return_messages=True,
+    memory_key="chat_history"
+)

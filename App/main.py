@@ -4,7 +4,7 @@ from App.config.settings import settings
 from App.api.routes import router as chat_router
 
 app = FastAPI(title=settings.APP_NAME)
-
+print("main is running")
 # Enable CORS for all origins (frontend integration later)
 app.add_middleware(
     CORSMiddleware,

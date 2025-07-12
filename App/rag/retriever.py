@@ -2,7 +2,7 @@ import os
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.document_loaders import TextLoader
-
+print("running on retriever")
 embedding_model = HuggingFaceEmbeddings()
 
 def create_vector_store(directory="App/rag/docs"):
