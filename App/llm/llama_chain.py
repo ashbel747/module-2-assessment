@@ -1,7 +1,6 @@
 from langchain_community.llms import HuggingFacePipeline
 from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 from App.config.settings import settings
-import torch
 
 def load_llama_chain():
     model_name = settings.LLAMA2_MODEL_NAME
