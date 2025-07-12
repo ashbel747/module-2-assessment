@@ -21,7 +21,7 @@ def get_llm():
             llm = None
     return llm
 
-@router.get("/")
+@router.get("/chat")
 def root():
     return {"message": "Restaurant Chatbot is running."}
 
