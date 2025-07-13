@@ -5,7 +5,7 @@ print("running on manager")
 
 chat_history = ChatMessageHistory()
 
-memory = ConversationBufferMemory.from_messages(
+memory = ConversationBufferMemory(
     chat_memory=chat_history,
     return_messages=True,
     memory_key="chat_history"
