@@ -35,3 +35,6 @@ JavaScript
 https://practicedeplo.netlify.app/
 
 
+![Chatbot UI](one.png)
+![Chatbot UI](two.png)
+![Chatbot UI](three.png)   

@@ -1,0 +1,6 @@
+Found existing installation: langchain 0.3.26
+Uninstalling langchain-0.3.26:
+  Would remove:
+    c:\users\hp\restaurantchatbot\venv\lib\site-packages\langchain-0.3.26.dist-info\*
+    c:\users\hp\restaurantchatbot\venv\lib\site-packages\langchain\*
+Proceed (Y/n)? 
