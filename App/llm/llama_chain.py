@@ -1,7 +1,7 @@
 import os
 from ctransformers import AutoModelForCausalLM
 from langchain_community.llms import CTransformers
-from config.settings import settings
+from ..config.settings import settings
 
 def load_llama_chain():
    model_path = settings.MODEL_PATH
