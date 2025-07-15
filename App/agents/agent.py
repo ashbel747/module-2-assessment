@@ -1,29 +1,49 @@
-from langchain.chains import LLMChain
-from langchain.agents import Tool, AgentExecutor, initialize_agent
+from langchain.agents import Tool, initialize_agent
 from langchain.memory import ConversationBufferMemory
-from langchain.llms import HuggingFacePipeline
-from App.langchain.templates import restaurant_template
-from App.llm.llama_chain import load_llama_chain
+from langchain.agents.agent_types import AgentType
+from langchain_community.llms import HuggingFacePipeline
+from transformers import pipeline
 from App.langchain.tools import MenuSearchTool
 
 def create_agent():
-   llm = HuggingFacePipeline(pipeline=load_llama_chain())
-   memory = ConversationBufferMemory(memory_key="history", return_messages=True)
+    print("Loading fast Hugging Face model: google/flan-t5-small")
 
-   tools = [
-      Tool.from_function(
-         func=MenuSearchTool().run,
-         name="menu_search",
-         description=MenuSearchTool.description
-      )
-   ]
+    hf_pipeline = pipeline(
+        "text2text-generation",
+        model="google/flan-t5-small",
+        tokenizer="google/flan-t5-small",
+        max_length=256,
+        temperature=0
+    )
 
-   agent = initialize_agent(
-      tools=tools,
-      llm=llm,
-      agent="conversational-react-description",
-      memory=memory,
-      verbose=True
-   )
+    llm = HuggingFacePipeline(pipeline=hf_pipeline)
 
-   return agent
+    print("Initializing memory.")
+    memory = ConversationBufferMemory(
+        memory_key="chat_history",
+        input_key="input",
+        return_messages=True
+    )
+
+    print("Loading tool.")
+    tool_instance = MenuSearchTool()
+    tools = [
+        Tool(
+            name=tool_instance.name,
+            func=tool_instance._run,
+            description=tool_instance.description
+        )
+    ]
+
+    print("Initializing agent...")
+    agent = initialize_agent(
+        tools=tools,
+        llm=llm,
+        agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
+        memory=memory,
+        verbose=True,
+        handle_parsing_errors=True,
+    )
+
+    print("Agent loaded successfully.")
+    return agent

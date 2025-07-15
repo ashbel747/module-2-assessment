@@ -5,8 +5,9 @@ from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from App.config.settings import settings
 
-def load_and_split_documents(docs_folder: str):
+def load_and_split_documents(docs_folder: str = "docs"):
    all_docs = []
+
    for filename in os.listdir(docs_folder):
       if filename.endswith(".txt"):
          filepath = os.path.join(docs_folder, filename)
@@ -18,7 +19,17 @@ def load_and_split_documents(docs_folder: str):
    return splitter.split_documents(all_docs)
 
 def create_retriever():
-   documents = load_and_split_documents("docs") 
+   print("Loading documents and creating retriever..")
+
+   documents = load_and_split_documents()
+
    embeddings = HuggingFaceEmbeddings(model_name=settings.EMBED_MODEL)
-   vectorstore = Chroma.from_documents(documents, embeddings, persist_directory="chroma_db")
+
+   vectorstore = Chroma.from_documents(
+      documents,
+      embedding=embeddings,
+      persist_directory="chroma_db"
+   )
+
+   print("Retriever ready.")
    return vectorstore.as_retriever(search_kwargs={"k": 4})
