@@ -25,6 +25,3 @@ class MenuSearchTool(BaseTool):
             return "\n".join(doc.page_content for doc in results)
         except Exception as e:
             return f"Error during search: {str(e)}"
-
-    def _arun(self, query: str) -> str:
-        raise NotImplementedError("Async not supported for MenuSearchTool.")

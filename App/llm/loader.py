@@ -15,11 +15,9 @@ def load_llm():
 
     print(f"Loading Hugging Face model '{model_id}' via API...")
 
-    # Load tokenizer and model for sequence-to-sequence generation
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=hf_token)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_id, token=hf_token)
 
-    # Setup pipeline for text2text-generation (used by Flan-T5 models)
     generation_pipeline = pipeline(
         "text2text-generation",
         model=model,

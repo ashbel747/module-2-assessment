@@ -2,14 +2,14 @@ from fastapi import APIRouter, Request
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR
+
 from App.config.limiter import limiter
-
-
 from App.agents.agent import create_agent
 from App.memory import manager as memory
 
 router = APIRouter()
 history_router = APIRouter()
+
 agent = create_agent()
 
 class ChatRequest(BaseModel):
@@ -22,13 +22,14 @@ class ErrorResponse(BaseModel):
     error: str
 
 @router.post("/chat", response_model=ChatResponse, responses={429: {"model": ErrorResponse}})
-@limiter.limit("5/minute")  # ✅ Decorator-style limit
+
+@limiter.limit("5/minute") 
 async def chat(request: Request, chat_req: ChatRequest):
     try:
         user_input = chat_req.message
         print(f"User input: {user_input}")
 
-        response = agent.run(user_input)
+        response = agent.invoke(user_input)
 
         print(f"Agent response: {response}")
         return {"response": response}

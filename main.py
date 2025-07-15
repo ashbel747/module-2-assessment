@@ -11,7 +11,6 @@ import os
 
 app = FastAPI()
 
-limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
 app.add_middleware(SlowAPIMiddleware)
 

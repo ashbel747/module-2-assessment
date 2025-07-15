@@ -2,7 +2,7 @@ from langchain.agents import Tool, initialize_agent
 from langchain.memory import ConversationBufferMemory
 from langchain.agents.agent_types import AgentType
 from langchain_community.llms import HuggingFacePipeline
-from transformers import pipeline
+from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 from App.langchain.tools import MenuSearchTool
 
 def create_agent():
@@ -13,7 +13,7 @@ def create_agent():
         model="google/flan-t5-small",
         tokenizer="google/flan-t5-small",
         max_length=256,
-        temperature=0
+        
     )
 
     llm = HuggingFacePipeline(pipeline=hf_pipeline)
