@@ -15,3 +15,5 @@ app.add_middleware(
 
 # Register chat router
 app.include_router(chat_router)
+
+# google/fan-t5-base

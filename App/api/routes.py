@@ -36,7 +36,7 @@ def chat_with_bot(request: ChatRequest):
             print(error_msg)
             return {"error": error_msg}
 
-        # ✅ Add prompt template here
+        
         prompt = """
 You are Paradiso Afrique’s virtual chef and cultural guide — a warm, intelligent, and helpful assistant representing the restaurant’s refined African essence.
 
